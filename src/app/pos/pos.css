@@ -1,0 +1,28 @@
+.pos-wrapper { display: flex; flex-direction: column; height: 100vh; width: 100%; background-color: #f1f5f9; overflow: hidden; }
+.pos-header { padding: 1rem; background-color: var(--card); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+.pos-cart { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; background: var(--card); padding: 1rem; border-radius: var(--radius); box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+.cart-item:active { background: #f8fafc; }
+.item-info h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--foreground); }
+.item-info p { color: #64748b; font-size: 0.9rem; }
+.item-actions { display: flex; align-items: center; gap: 1rem; }
+.qty-btn { background: #f1f5f9; color: var(--foreground); border: 1px solid var(--border); width: 40px; height: 40px; border-radius: 50%; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0, 0.05); transition: background 0.2s;}
+.qty-btn:hover { background: #e2e8f0; }
+.qty-btn:active { transform: scale(0.9); }
+.pos-footer { padding: 1rem; background: var(--card); border-top: 1px solid var(--border); flex-shrink: 0; padding-bottom: env(safe-area-inset-bottom, 1rem); box-shadow: 0 -4px 6px -1px rgba(0,0,0,0.05); }
+.subtotals-box { display: flex; justify-content: space-between; font-size: 1.1rem; color: #475569; margin-bottom: 0.5rem; font-weight: 600;}
+.total-box { display: flex; justify-content: space-between; font-size: 2rem; font-weight: 900; color: var(--success); margin-bottom: 1rem; }
+.keyboard-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.btn-large { padding: 1.25rem; font-size: 1.25rem; }
+#interactive.viewport { width: 100%; height: 300px; background: #0f172a; position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 1rem; }
+#interactive.viewport video { width: 100%; height: 100%; object-fit: cover; }
+#interactive.viewport canvas.drawingBuffer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* Ventanas Emergentes 3D (Pop-up Alta Rapida/Balanza) */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); z-index: 999; display: flex; justify-content: center; align-items: center; padding: 1rem; overflow-x: hidden; }
+.modal-container { width: 100%; max-width: 440px; padding: 2.5rem; background: var(--card); border: 1px solid var(--border); border-radius: calc(var(--radius) * 1.5); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); max-height: 90vh; overflow-y: auto; overflow-x: hidden; word-break: break-word; }
+.modal-container h2 { font-size: 1.5rem; font-weight: 800; color: var(--foreground); }
+
+@media (max-width: 480px) {
+  .modal-container { padding: 1.5rem; }
+}

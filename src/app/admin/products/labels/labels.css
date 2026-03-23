@@ -1,0 +1,114 @@
+/* src/app/admin/products/labels/labels.css */
+
+.print-layout {
+  background-color: #f1f5f9; /* Fondo gris claro ideal para Desktop */
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.no-print {
+  background-color: var(--card);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+.labels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  max-width: 1000px; /* Ancho estimado A4 en web preview */
+  margin: 0 auto;
+}
+
+.label-card {
+  border: 2px dashed #cbd5e1;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  background-color: #ffffff; /* Las tarjetas siempre blancas */
+  color: #000000;          /* Texto siempre negro para contraste */
+  border-radius: 8px;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.label-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label-price {
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.barcode-wrapper {
+  transform: scale(0.9);
+  max-width: 100%;
+}
+
+/* Magia del CSS de Impresión nativa */
+@media print {
+  /* Reseteos globales de Chrome/Edge */
+  @page {
+    margin: 10mm; 
+  }
+
+  body, html {
+    background: transparent !important;
+    width: 100%;
+  }
+
+  /* Ocultamos paneles ajenos (sidebar si la hubiera) y botones */
+  .no-print, .sidebar {
+    display: none !important;
+  }
+
+  .admin-wrapper {
+    flex-direction: column !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .main-content {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .print-layout {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .labels-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas rígidas en papel A4 */
+    gap: 10px;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .label-card {
+    border: 1px dotted #ccc !important;
+    box-shadow: none !important;
+    margin: 0;
+    padding: 15px 5px;
+    background-color: transparent !important;
+  }
+}

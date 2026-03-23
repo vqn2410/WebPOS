@@ -1,0 +1,14 @@
+.admin-wrapper { display: flex; min-height: 100vh; flex-direction: column; }
+@media (min-width: 768px) { .admin-wrapper { flex-direction: row; } }
+.sidebar { width: 100%; padding: 1.5rem; display: flex; flex-direction: column; border-right: 1px solid var(--border); background-color: var(--card); gap: 1.5rem; position: sticky; top: 0; }
+@media (min-width: 768px) { .sidebar { width: 250px; height: 100vh; } }
+.sidebar h2 { font-size: 1.25rem; color: var(--primary); font-weight: 800; letter-spacing: -0.02em; }
+.sidebar nav { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; }
+.nav-item { padding: 0.75rem 1rem; color: #64748b; text-decoration: none; border-radius: var(--radius); transition: all 0.2s ease; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
+.nav-item.active, .nav-item:hover { background: #f1f5f9; color: var(--primary); font-weight: 700; }
+.btn-danger { background-color: transparent; color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.75rem 1rem; border-radius: var(--radius); cursor: pointer; transition: background-color 0.2s; font-weight: 600; text-align: center; }
+.btn-danger:hover { background-color: #fee2e2; }
+.main-content { flex: 1; padding: 1.5rem; width: 100%; max-width: 100%; overflow-x: hidden; overflow-y: auto; background-color: var(--background); }
+/* Resolutor Responsivo: Centra orgánicamente el contenido de todas las rutas de Admin en Monitores UltraWide */
+.main-content > div { max-width: 1200px; margin: 0 auto; width: 100%; padding-bottom: 3rem; }
+@media (min-width: 768px) { .main-content { padding: 2.5rem; } }

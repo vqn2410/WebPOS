@@ -1,0 +1,12 @@
+.products-toolbar { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; margin-bottom: 2rem; align-items: center; }
+.filters-box { display: flex; gap: 1rem; flex: 1; min-width: 300px; }
+.actions-box { display: flex; gap: 0.75rem; }
+.btn-upload-label { display: inline-flex; align-items: center; gap: 0.5rem; color: #334155; background-color: var(--card); border: 1px dashed #cbd5e1; padding: 0.875rem 1.25rem; border-radius: var(--radius); cursor: pointer; transition: all 0.2s; font-weight: 600; }
+.btn-upload-label:hover { background-color: #f1f5f9; border-color: var(--primary); color: var(--primary); }
+.btn-upload-label input[type="file"] { display: none; }
+.grid-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.grid-form .form-group { margin-bottom: 0; }
+.col-span-2 { grid-column: span 2; }
+@media (max-width: 600px) { .grid-form { grid-template-columns: 1fr; } .col-span-2 { grid-column: span 1; } }
+.stock-bajo { color: var(--danger); font-weight: bold; background: #fee2e2; padding: 2px 6px; border-radius: 4px; display: inline-block;}
+.precio-cell { color: var(--success); font-weight: 700; }
